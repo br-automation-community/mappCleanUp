@@ -1,0 +1,37 @@
+VAR
+	CleanUp : mappCleanUpType := (PAR:=(Simulate:=TRUE,Device:='USER_PATH')); (*Main structure*)
+END_VAR
+(*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local variables*)
+VAR
+	State : CLEANUP_STATE;
+	SateAfterRead : CLEANUP_STATE;
+	SateAfterDelete : CLEANUP_STATE;
+	Logger : ARRAY[0..LOG_NUM] OF STRING[LOG_LEN];
+	TmpStr1 : STRING[STRING_LEN];
+	TmpStr2 : STRING[STRING_LEN];
+	FileDeleteName : STRING[FILE_NAME_LEN];
+	FileInformation : fiDIR_READ_EX_DATA;
+	FileDirInfo : fiDIR_READ_EX_DATA;
+END_VAR
+(*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local functions*)
+VAR
+	DirOpen_0 : DirOpen;
+	DirReadEx_0 : DirReadEx;
+	DirClose_0 : DirClose;
+	FileDelete_0 : FileDelete;
+END_VAR
+(*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local error numbers*)
+VAR CONSTANT
+	CLEANUP_ERR_FILE_NAME_TO_LONG : UINT := 10000; (*File name + path exceeds maximum file name length*)
+END_VAR
+(*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
+(*Local constants*)
+VAR CONSTANT
+	FILE_NAME_LEN : UINT := 200; (*Maximum file name length*)
+	STRING_LEN : UINT := FILE_NAME_LEN+100;
+	LOG_LEN : USINT := 200;
+	LOG_NUM : USINT := 20;
+END_VAR
