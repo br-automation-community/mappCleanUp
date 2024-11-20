@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?AutomationStudio Version=4.12.6.106 FileVersion="4.9"?>
+<Hardware xmlns="http://br-automation.co.at/AS/Hardware">
+  <Module Name="X20CP3687X" Type="X20CP3687X" Version="1.8.2.0">
+    <Connector Name="IF2">
+      <Parameter ID="ActivateDevice" Value="1" />
+      <Parameter ID="ActivateSnmp" Value="2" />
+    </Connector>
+    <Parameter ID="ConfigurationID" Value="mappCleanUp_X20CP" />
+    <Group ID="FileDevice1" />
+    <Parameter ID="FileDeviceName1" Value="USER" />
+    <Parameter ID="FileDevicePath1" Value="USER_PATH" />
+    <Group ID="FtpUser1" />
+    <Parameter ID="FtpUsername1" Value="admin" />
+    <Parameter ID="FtpUserPassword1" Value="+ZKvy1J8o41WeGJ4ICTiSOGGvLAHu+nBthxiKzD2AAg=" Description="admin" />
+    <Parameter ID="FtpUserSalt1" Value="TuKBiUW7" />
+    <Parameter ID="FTPAccessRight1" Value="0" />
+  </Module>
+</Hardware>

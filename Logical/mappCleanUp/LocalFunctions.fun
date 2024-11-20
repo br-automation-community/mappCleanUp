@@ -9,6 +9,16 @@ FUNCTION CreateError : CLEANUP_STATE
 	END_VAR
 END_FUNCTION
 
+FUNCTION IsInstr : BOOL
+	VAR_INPUT
+		string1 : UDINT;
+		string2 : UDINT;
+	END_VAR
+	VAR
+		idx : UDINT;
+	END_VAR
+END_FUNCTION
+
 FUNCTION CreateLoggerEntry : USINT
 	VAR_INPUT
 		LogMsg : UDINT; (*Log message*)

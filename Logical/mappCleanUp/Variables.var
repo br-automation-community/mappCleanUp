@@ -1,22 +1,28 @@
 VAR
-	CleanUp : mappCleanUpType := (PAR:=(Simulate:=TRUE,Device:='USER_PATH')); (*Main structure*)
+	CleanUp : mappCleanUpType := (PAR:=(Simulate:=TRUE,Device:='USER',MaxFilesToKeep:=10,MinSpace:=1000000)); (*Main structure*)
 END_VAR
 (*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
 (*Local variables*)
 VAR
 	State : CLEANUP_STATE;
-	SateAfterRead : CLEANUP_STATE;
-	SateAfterDelete : CLEANUP_STATE;
+	StateAfterRead : CLEANUP_STATE;
+	StateAfterDelete : CLEANUP_STATE;
+	StateAfterInfo : CLEANUP_STATE;
 	Logger : ARRAY[0..LOG_NUM] OF STRING[LOG_LEN];
 	TmpStr1 : STRING[STRING_LEN];
 	TmpStr2 : STRING[STRING_LEN];
 	FileDeleteName : STRING[FILE_NAME_LEN];
 	FileInformation : fiDIR_READ_EX_DATA;
 	FileDirInfo : fiDIR_READ_EX_DATA;
+	SimFileCount : UINT;
+	SimMemCount : UDINT;
+	i : UINT;
 END_VAR
 (*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
 (*Local functions*)
 VAR
+	DirInfo_0 : DirInfo;
+	DevMemInfo_0 : DevMemInfo;
 	DirOpen_0 : DirOpen;
 	DirReadEx_0 : DirReadEx;
 	DirClose_0 : DirClose;
@@ -26,6 +32,9 @@ END_VAR
 (*Local error numbers*)
 VAR CONSTANT
 	CLEANUP_ERR_FILE_NAME_TO_LONG : UINT := 10000; (*File name + path exceeds maximum file name length*)
+	CLEANUP_ERR_PAR_IS_EMPTY : UINT := 10001; (*Corresponding parameter for command is empty*)
+	CLEANUP_ERR_MIN_SPACE : UINT := 10002; (*Minimum space could not be achieved*)
+	CLEANUP_ERR_MIN_FILES : UINT := 10003; (*Minimum number of files could not be achieved*)
 END_VAR
 (*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*)
 (*Local constants*)
