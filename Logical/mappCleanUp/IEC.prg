@@ -7,5 +7,6 @@
     <File Description="Local variables" Private="true">Variables.var</File>
     <File Description="Local function definition" Private="true">LocalFunctions.fun</File>
     <File Description="Local function code">LocalFunctions.st</File>
+    <File>revision.txt</File>
   </Files>
 </Program>
