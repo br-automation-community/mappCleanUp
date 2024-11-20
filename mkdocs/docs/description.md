@@ -1,4 +1,4 @@
-The sample consists of a sample task that can be copied and pasted into your project. Files can be deleted by the following criteria.
+The sample consists of a task that can be copied and pasted into your project. Files can be deleted by the following criteria.
 
 * Delete oldest file
 * Delete all files older than a certain date and time

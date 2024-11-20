@@ -1,4 +1,4 @@
-site_name: mappRecipe sample
+site_name: mappCleanUp sample
 use_directory_urls: false
 
 extra_css: [extra.css]
@@ -22,5 +22,5 @@ theme:
 plugins:
   - search
 
-repo_url: https://github.com/br-automation-com/mappView-Recipe
+repo_url: https://github.com/br-automation-com/mappCleanUp
 repo_name: GitHub Repo
