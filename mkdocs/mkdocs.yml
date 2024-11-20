@@ -1,0 +1,26 @@
+site_name: mappRecipe sample
+use_directory_urls: false
+
+extra_css: [extra.css]
+
+nav:
+  - Start: index.md
+  - Description: description.md
+  - Revision: revision.md
+
+theme:
+  name: material
+  logo: images/bur.png
+
+  palette:
+    scheme: default
+    primary: orange
+    accent: orange
+
+  features: toc.integrate
+
+plugins:
+  - search
+
+repo_url: https://github.com/br-automation-com/mappView-Recipe
+repo_name: GitHub Repo

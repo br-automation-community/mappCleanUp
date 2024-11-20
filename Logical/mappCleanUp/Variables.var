@@ -41,6 +41,6 @@ END_VAR
 VAR CONSTANT
 	FILE_NAME_LEN : UINT := 200; (*Maximum file name length*)
 	STRING_LEN : UINT := FILE_NAME_LEN+100;
-	LOG_LEN : USINT := 200;
+	LOG_LEN : USINT := 200; (*Maxium length of a log entry*)
 	LOG_NUM : USINT := 20;
 END_VAR
