@@ -3,4 +3,4 @@
 
 This sample deletes old files from a directory using different criteria.
 
-## [**For a detailed description follow this link**](https://br-automation-com.github.io/mappCleanUp/)
+## [**For a detailed description follow this link**](https://br-automation-community.github.io/mappCleanUp/)
